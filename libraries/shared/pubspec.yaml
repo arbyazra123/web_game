@@ -1,0 +1,27 @@
+name: shared
+description: A new Flutter package.
+version: 0.0.1
+author:
+homepage:
+publish_to: none
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # This is our modular
+  components:
+    path: ../components
+  dependencies:
+    path: ../dependencies
+  core:
+    path: ../core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: any
+flutter:

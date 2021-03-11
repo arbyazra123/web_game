@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_screenutil/screen_util.dart';
 import 'package:viewport/viewport.dart';
-import 'package:web_game/components/components.dart';
 import 'package:web_game/features/register/pages/register_screen.dart';
-import 'package:web_game/shared/shared.dart';
+import 'package:components/components.dart';
+import 'package:shared/shared.dart';
 import 'package:formz/formz.dart';
-import '../../features.dart';
+import 'package:core/core.dart';
 
 class LoginForm extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;

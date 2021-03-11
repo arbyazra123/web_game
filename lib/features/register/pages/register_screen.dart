@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:web_game/components/components.dart';
-import 'package:web_game/features/auth/data/repositores/auth_repository.dart';
-import 'package:web_game/shared/injector.dart';
-import 'package:web_game/shared/shared.dart';
+import 'package:components/components.dart';
+import 'package:shared/shared.dart';
 import 'package:formz/formz.dart';
-import '../../features.dart';
+import 'package:core/core.dart';
+import 'package:web_game/features/features.dart';
 
 class RegisterScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();

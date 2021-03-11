@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/screen_util.dart';
-import 'package:web_game/components/components.dart';
-import 'package:web_game/shared/shared.dart';
-
-import '../../features.dart';
+import 'package:components/components.dart';
+import 'package:shared/shared.dart';
 
 class WelcomeScreen extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;

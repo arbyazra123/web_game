@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:web_game/components/components.dart';
-import 'package:web_game/features/auth/data/repositores/repositories.dart';
-import 'package:web_game/features/login/blocs/blocs.dart';
 import 'package:web_game/features/login/widgets/widgets.dart';
 import 'package:formz/formz.dart';
-import 'package:web_game/shared/injector.dart';
-import 'package:web_game/shared/shared.dart';
+import 'package:components/components.dart';
+import 'package:shared/shared.dart';
+import 'package:core/core.dart';
 
 class LoginScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
