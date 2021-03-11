@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:viewport/viewport.dart';
-
 import 'features/features.dart';
-import 'features/global/blocs/language_bloc/language_bloc.dart';
-import 'shared/shared.dart';
+import 'package:shared/shared.dart';
+import 'package:core/core.dart';
 
 class AppView extends StatefulWidget {
   // This widget is the root of your application.

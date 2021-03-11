@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/screen_util.dart';
-import 'package:web_game/components/components.dart';
-import 'package:web_game/shared/shared.dart';
+import 'package:components/components.dart';
+import 'package:shared/shared.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../features.dart';
+import 'package:core/core.dart';
 import 'package:formz/formz.dart';
 
 class RegisterForm extends StatefulWidget {
