@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "307077369747",
+    "project_id": "web-game-b5d07",
+    "storage_bucket": "web-game-b5d07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307077369747:android:ca6d7fee42e9035f4a2266",
+        "android_client_info": {
+          "package_name": "com.mroalla.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307077369747-nj499rk29at9juq9462rmv2siv03ikcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeoYbH0JOcfd9VZBxNHYqVlzJqs7Gb65o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307077369747-nj499rk29at9juq9462rmv2siv03ikcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

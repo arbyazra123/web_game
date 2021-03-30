@@ -13,6 +13,10 @@ class AppConfigProvider extends InheritedWidget {
   Map<String, dynamic> lang;
   String langCode;
   bool isProduction;
+  String gameId;
+  String roomId;
+  String gameplayId;
+  dynamic gameData;
   GlobalKey<NavigatorState> navigatorKey;
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) => true;

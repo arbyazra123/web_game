@@ -15,13 +15,28 @@ class GamesBloc extends Bloc<GamesEvent, GamesState> {
   Stream<GamesState> mapEventToState(
     GamesEvent event,
   ) async* {
+    if(event is ResetGames){
+      yield GamesInitial();
+    }
     if (event is GetGames) {
       yield GamesLoading();
-      _subscription?.cancel();
-      _subscription = repository.getGames().listen((games) {
-        print(games.length);
-        add(GamesUpdated(games));
-      });
+    
+      try {
+        // await repository.printx();
+        if (_subscription != null) {
+        _subscription.cancel().then(
+            (value) => _subscription = repository.getGames().listen((games) {
+                  add(GamesUpdated(games));
+                }));
+      } else {
+        _subscription = repository.getGames().listen((games) {
+          add(GamesUpdated(games));
+        });
+      }
+      } catch (e) {
+        print(e);
+        yield GamesError();
+      }
     }
     if (event is GamesUpdated) {
       yield GamesLoaded(event.games);

@@ -18,14 +18,16 @@ class H3Atm extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var fs =Dimens.dp14;
+    var fs =Dimens.dp12;
+    var _currentStyle =
+        Theme.of(context).textTheme.subtitle1.copyWith(fontSize: fs).apply(color: AppColors.textColor);
    return Text(
       Utils.removeAllHtmlTags(text),
       maxLines: maxLine,
       overflow: overflow,
       textAlign: align,
       style: style?.copyWith(fontSize: fs) ??
-          TextStyle(fontSize: fs),
+          _currentStyle,
     );
   }
 }

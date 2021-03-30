@@ -20,7 +20,10 @@ class HomeScreen extends StatelessWidget {
                   icon: Icon(
                     Icons.logout,
                   ),
-                  onPressed: () =>gi<AuthBloc>().add(AuthenticationLogoutRequested()),
+                  onPressed: (){
+                    gi<GamesBloc>().add(ResetGames());
+                    gi<AuthBloc>().add(AuthenticationLogoutRequested());
+                  },
                 ),
               )
             ],

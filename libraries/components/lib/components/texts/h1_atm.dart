@@ -19,10 +19,9 @@ class H1Atm extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var fs = ViewPort.of(context).aspectRatio* 80;
+    var fs = ViewPort.of(context).aspectRatio * 80;
     var _currentStyle =
-        Theme.of(context).textTheme.subtitle1.copyWith(fontSize: fs);
-
+        Theme.of(context).textTheme.subtitle1.copyWith(fontSize: fs).apply(color: AppColors.textColor);
     return Text(
       Utils.removeAllHtmlTags(text),
       maxLines: maxLine,
