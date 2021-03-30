@@ -23,12 +23,14 @@ class H5Atm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var fs =ViewPort.of(context).aspectRatio* 20;
+    var _currentStyle =
+        Theme.of(context).textTheme.subtitle1.copyWith(fontSize: fs).apply(color: AppColors.textColor);
     return Text(
       Utils.removeAllHtmlTags(text),
       maxLines: maxLine,
       overflow: overflow,
       textAlign: align,
-      style: style?.copyWith(fontSize: fs) ?? TextStyle(fontSize: fs),
+      style: style?.copyWith(fontSize: fs) ?? _currentStyle,
     );
   }
 }

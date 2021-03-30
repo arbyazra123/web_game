@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:viewport/viewport.dart';
 import 'package:shared/shared.dart';
 // import 'package:flutter_screenutil/screen_util.dart';
 class H2Atm extends StatelessWidget {
@@ -19,14 +18,16 @@ class H2Atm extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var fs = ViewPort.of(context).aspectRatio*50;
+    var fs = 18.0;
+    var _currentStyle =
+        Theme.of(context).textTheme.subtitle1.copyWith(fontSize: fs).apply(color: AppColors.textColor);
    return Text(
       Utils.removeAllHtmlTags(text),
       maxLines: maxLine,
       overflow: overflow,
       textAlign: align,
       style: style?.copyWith(fontSize: fs) ??
-          TextStyle(fontSize: fs),
+          _currentStyle,
     );
   }
 }

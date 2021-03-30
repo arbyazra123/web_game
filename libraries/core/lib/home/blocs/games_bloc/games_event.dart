@@ -8,6 +8,7 @@ abstract class GamesEvent extends Equatable {
 }
 
 class GetGames extends GamesEvent{}
+class ResetGames extends GamesEvent{}
 class GamesUpdated extends GamesEvent{
   final List<DocumentSnapshot> games;
 

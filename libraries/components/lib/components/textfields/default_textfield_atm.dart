@@ -116,8 +116,9 @@ class DefaultTextFieldAtm extends StatelessWidget {
         contentPadding: horizontalPadding != null
             ? EdgeInsets.symmetric(horizontal: horizontalPadding)
             : null,
-        hintStyle: hintStyle??TextStyle(color: Colors.grey[100],fontSize: fs),
+        hintStyle: hintStyle??TextStyle(color: Colors.grey[500],fontSize: fs),
         hintText: hintText,
+        labelStyle: hintStyle??TextStyle(color: Colors.grey[500],fontSize: fs),
         labelText: labelText,
         isDense: true,
         suffixIcon: suffixIcon,

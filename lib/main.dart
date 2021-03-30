@@ -11,15 +11,17 @@ void main() async {
   WidgetsBinding.instance.addPostFrameCallback((_) {});
   final _navigatorKey = GlobalKey<NavigatorState>();
   await setup();
-  
+
   await Firebase.initializeApp();
   runApp(
-    AppConfigProvider(
-      isProduction: false,
-      navigatorKey: _navigatorKey,
-      child: MultiBlocProvider(
-        providers: BlocProviders().getProviders(),
-        child: AppView(),
+    UserProvider(
+      child: AppConfigProvider(
+        isProduction: false,
+        navigatorKey: _navigatorKey,
+        child: MultiBlocProvider(
+          providers: BlocProviders().getProviders(),
+          child: AppView(),
+        ),
       ),
     ),
   );

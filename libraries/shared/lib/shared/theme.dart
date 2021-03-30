@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'shared.dart';
 
-
 class LightTheme {
-  static ThemeData themeData = ThemeData(fontFamily: stolzl).copyWith(
+  static ThemeData themeData = ThemeData(
+    fontFamily: stolzl,
+  ).copyWith(
       primaryColor: AppColors.primaryColor,
       scaffoldBackgroundColor: AppColors.appWhite,
       accentColor: AppColors.primaryColor,
@@ -26,14 +27,13 @@ class LightTheme {
   );*/
 }
 
-
-class TextStylesTheme{
+class TextStylesTheme {
   static TextStyle appbarWhiteText = TextStyle(
     fontWeight: FontWeight.w700,
     color: AppColors.appWhite,
     fontSize: 16,
   );
-static TextStyle appbarBlackText = TextStyle(
+  static TextStyle appbarBlackText = TextStyle(
     fontWeight: FontWeight.w500,
     color: AppColors.greyDark,
     fontSize: 14,
@@ -44,5 +44,4 @@ static TextStyle appbarBlackText = TextStyle(
     color: AppColors.secondaryColor,
     fontSize: 14,
   );
-
 }

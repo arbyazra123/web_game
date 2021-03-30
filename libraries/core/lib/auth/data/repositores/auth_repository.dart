@@ -54,6 +54,7 @@ class AuthenticationRepository {
     assert(request != null && context != null);
     var checking = await _isUsernameOrPasswordExist(request, context);
     RegisterResponse response = RegisterResponse(success: false);
+    User user;
     if (!checking.isAvailable) {
       try {
         await firebase_auth.FirebaseAuth.instance
@@ -63,6 +64,7 @@ class AuthenticationRepository {
         )
             .then(
           (value) async {
+            user = value.user.toUser; 
             response = RegisterResponse(
                 request: request,
                 msg: translate(context, "register_success"),
@@ -87,7 +89,7 @@ class AuthenticationRepository {
       return response;
     }
     if (response.success) {
-      await FirebaseFirestore.instance.collection(usersCollection).add({
+      await FirebaseFirestore.instance.collection(usersCollection).doc(user.email).set({
         "username": request.username,
         "email": request.email,
         "age": request.age,

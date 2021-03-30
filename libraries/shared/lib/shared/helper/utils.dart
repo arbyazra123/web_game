@@ -11,16 +11,27 @@ String translate(BuildContext context, String key) {
   return AppConfigProvider.of(context).lang[key];
 }
 
+extension HexColor on Color {
+  /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
+  static Color fromHex(String hexString) {
+    final buffer = StringBuffer();
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+    return Color(int.parse(buffer.toString(), radix: 16));
+  }
+}
+
 class Utils {
   static showLoadingDialog(BuildContext context) {
     showDialog(
         context: context,
-        builder:(context) => Container(
-          child: Center(
-            child: CircularProgressIndicator(),
-          ),
-        ));
+        builder: (context) => Container(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ));
   }
+
   static String getLoginError(dynamic error) {
     print(error);
     String errorMessage;
@@ -78,7 +89,6 @@ class Utils {
       throw 'WhatsApp tidak ter-install';
     }
   }
-
 
   static String getStatusOrder(String value) {
     switch (value.toLowerCase()) {
