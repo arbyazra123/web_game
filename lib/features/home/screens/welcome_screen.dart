@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:components/components.dart';
 import 'package:shared/shared.dart';
 
-class WelcomeScreen extends StatefulWidget {
+class WelcomePage extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;
 
-  const WelcomeScreen({Key key, this.navigatorKey}) : super(key: key);
+  const WelcomePage({Key key, this.navigatorKey}) : super(key: key);
   @override
-  _WelcomeScreenState createState() => _WelcomeScreenState();
+  _WelcomePageState createState() => _WelcomePageState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomePageState extends State<WelcomePage> {
   @override
   void initState() {
     super.initState();

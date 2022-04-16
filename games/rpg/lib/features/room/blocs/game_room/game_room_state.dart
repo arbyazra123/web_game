@@ -14,13 +14,13 @@ class GameRoomLoading extends GameRoomState {}
 
 class GameRoomLoaded extends GameRoomState {
   final String roomId;
-  final DocumentSnapshot game;
-  final DocumentSnapshot gameRoom;
+  final DocumentSnapshot<Map<String, dynamic>> game;
+  final DocumentSnapshot<Map<String, dynamic>> gameRoom;
   GameRoomLoaded({
     this.roomId,
     this.game,
-    this.gameRoom, 
+    this.gameRoom,
   });
   @override
-  List<Object> get props => [roomId,game,gameRoom];
+  List<Object> get props => [roomId, game, gameRoom];
 }

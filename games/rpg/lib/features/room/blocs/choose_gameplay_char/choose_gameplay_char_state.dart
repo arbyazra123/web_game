@@ -8,7 +8,7 @@ class ChooseGameplayCharState extends Equatable{
 
 class ChooseGameplayCharInitial extends ChooseGameplayCharState {}
 class ChooseGameplayCharLoaded extends ChooseGameplayCharState {
-  final DocumentSnapshot result;
+  final DocumentSnapshot<Map<String,dynamic>> result;
 
   ChooseGameplayCharLoaded(this.result);
   @override

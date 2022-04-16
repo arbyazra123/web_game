@@ -12,11 +12,15 @@ import 'features/home/pages/home_screen.dart';
 import 'injector.dart';
 
 class RPGMain extends StatelessWidget {
-  final String gameId;
+  static final String route = "/rpg";
 
-  const RPGMain({Key key, this.gameId}) : super(key: key);
+  const RPGMain({
+    Key key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final gameId = (ModalRoute.of(context)?.settings?.arguments ?? "");
+
     return GameConfigProvider(
       child: MultiBlocProvider(
         providers: providers,

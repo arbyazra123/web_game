@@ -15,10 +15,10 @@ class GamesWidget extends StatefulWidget {
 
 class _GamesWidgetState extends State<GamesWidget> {
   @override
-  void initState() { 
+  void initState() {
     super.initState();
-    // context.read<GamesBloc>().add(GetGames());
   }
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -61,16 +61,11 @@ class _GamesWidgetState extends State<GamesWidget> {
     );
   }
 
-  Widget _buildGameItem(DocumentSnapshot game) {
+  Widget _buildGameItem(DocumentSnapshot<Map<String, dynamic>> game) {
     // print(game.data());
     return InkWell(
       onTap: () {
-        
-        Navigator.push(
-            context,
-            RPGMain(
-              gameId: game.id,
-            ).route());
+        Navigator.pushNamed(context, game.data()['route'], arguments: game.id);
       },
       child: Container(
         decoration: BoxDecoration(
@@ -90,38 +85,39 @@ class _GamesWidgetState extends State<GamesWidget> {
                 ),
               ),
             ),
-            Center(
-                child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Container(
-                width: 170,
-                height: 170,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.black.withOpacity(0.0),
-                      Colors.black.withOpacity(0.2),
-                      Colors.black.withOpacity(0.2),
-                      Colors.black.withOpacity(0.8),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: H5Atm(
-                      game.data()['name'],
-                      align: TextAlign.center,
-                      style: TextStyle(color: Colors.white),
+            MouseRegion(
+              onHover: (v) {},
+              child: Center(
+                  child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  width: 170,
+                  height: 170,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withOpacity(0.0),
+                        Colors.black.withOpacity(0.2),
+                      ],
                     ),
+                    borderRadius: BorderRadius.circular(20),
                   ),
+                  // child: Align(
+                  //   alignment: Alignment.bottomCenter,
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.only(bottom: 20),
+                  //     child: H5Atm(
+                  //       game.data()['name'],
+                  //       align: TextAlign.center,
+                  //       style: TextStyle(color: Colors.white),
+                  //     ),
+                  //   ),
+                  // ),
                 ),
-              ),
-            )),
+              )),
+            ),
           ],
         ),
       ),

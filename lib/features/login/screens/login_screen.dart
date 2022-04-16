@@ -6,7 +6,7 @@ import 'package:components/components.dart';
 import 'package:shared/shared.dart';
 import 'package:core/core.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {

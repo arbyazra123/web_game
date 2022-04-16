@@ -6,7 +6,7 @@ import 'package:components/components.dart';
 import 'package:shared/shared.dart';
 import 'package:core/core.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

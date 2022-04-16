@@ -35,7 +35,7 @@ class RoomScreen extends StatelessWidget {
 }
 
 class RoomBody extends StatefulWidget {
-  final DocumentSnapshot room;
+  final DocumentSnapshot<Map<String,dynamic>> room;
   final String gameId;
   const RoomBody({Key key, this.room, this.gameId}) : super(key: key);
   @override

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>307077369747-2odejdqou3ujgq80dljh421ogl3rn2u9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.307077369747-2odejdqou3ujgq80dljh421ogl3rn2u9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCILC1VSuobzmqvMPdY8obSYq6g-YdIQ2s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>307077369747</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mroalla.app</string>
+	<key>PROJECT_ID</key>
+	<string>web-game-b5d07</string>
+	<key>STORAGE_BUCKET</key>
+	<string>web-game-b5d07.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:307077369747:ios:6c59b14b8e9a79ac4a2266</string>
+</dict>
+</plist>

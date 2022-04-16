@@ -35,6 +35,8 @@ dependencies:
   # This is our modular
   rpg:
     path: games/rpg
+  lets_cook:
+    path: games/lets_cook
 
 
   # utility
@@ -51,6 +53,9 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: any
+  auto_route_generator: any
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

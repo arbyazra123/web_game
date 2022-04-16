@@ -16,7 +16,7 @@ class GameRepository {
 
   Future<DocumentSnapshot> isUserHasRoom(BuildContext context) async {
     DocumentSnapshot existingRoom;
-    var result = await roomReference.get();
+    QuerySnapshot<Map<String, dynamic>> result = await roomReference.get();
     if (result.docs.isNotEmpty) {
       result.docs.forEach(
         (element) {
@@ -44,14 +44,15 @@ class GameRepository {
   }
 
   Future<DocumentSnapshot> createRoom(BuildContext context) async {
-    var game = await collection.get();
+    DocumentSnapshot<Map<String, dynamic>> game = await collection.get();
     String email = UserProvider.of(context).user.email;
     String sharedId = Uuid().v1().split("-").join().substring(0, 6);
     var result = await gameplayReference.add({
       "id_user": email,
       "id_game": gameId,
     });
-    var createdRoom = await roomReference.add(
+    DocumentReference<Map<String, dynamic>> createdRoom =
+        await roomReference.add(
       {
         "id_gameplay": result.id,
         "is_multiplayer": game.data()['is_multiplayer'],
