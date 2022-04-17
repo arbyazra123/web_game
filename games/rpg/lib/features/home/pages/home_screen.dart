@@ -1,6 +1,5 @@
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:rpg/data/game_providers/game_config_provider.dart';
 import 'package:rpg/rpg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared/shared.dart';
