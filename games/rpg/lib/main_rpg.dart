@@ -11,10 +11,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'features/home/pages/home_screen.dart';
 import 'injector.dart';
 
-class RPGMain extends StatelessWidget {
+class RPGMainPage extends StatelessWidget {
   static final String route = "/rpg";
 
-  const RPGMain({
+  const RPGMainPage({
     Key key,
   }) : super(key: key);
   @override

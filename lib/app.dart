@@ -4,7 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:lets_cook/lets_cook.dart';
 import 'package:rpg/main_rpg.dart';
+import 'package:rpg/routes/rpg_router.dart';
 import 'package:viewport/viewport.dart';
+import 'package:web_game/injector.dart';
+import 'package:web_game/routes/main_router.dart';
 import 'features/features.dart';
 import 'package:shared/shared.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,12 +23,18 @@ class _AppViewState extends State<AppView> with WidgetsBindingObserver {
   final _navigatorKey = GlobalKey<NavigatorState>();
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ViewPortWidget.fixed(
       width: 470,
       height: 690,
-      child: MaterialApp(
-        navigatorKey: _navigatorKey,
+      child: MaterialApp.router(
+        routerDelegate: mainGi.get<MainRouter>().delegate(),
+        routeInformationParser: mainGi.get<MainRouter>().defaultRouteParser(),
         title: 'Flutter Demo',
         theme: LightTheme.themeData,
         builder: (context, child) {
@@ -38,16 +47,6 @@ class _AppViewState extends State<AppView> with WidgetsBindingObserver {
         // home: RPGApp(
         //   gameId: "rpg",
         // ),
-        routes: {
-          RPGMain.route: (_) => RPGMain(),
-          LetsCookMain.route: (_) => LetsCookMain(),
-        },
-        onGenerateRoute: (_) => WelcomePage().route(),
-        localizationsDelegates: [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
         supportedLocales: [
           Locale('en', 'US'),
           Locale('id', 'ID'),
@@ -116,17 +115,11 @@ class __AppState extends State<_App> with WidgetsBindingObserver {
               switch (state.status) {
                 case AuthStatus.authenticated:
                   UserProvider.of(context).user = state.user;
-                  widget.navigator.currentState.pushReplacement(
-                    HomePage().route(),
-                    // (route) => false,
-                  );
+                  mainGi.get<MainRouter>().replace(HomeRoute());
                   break;
                 case AuthStatus.unauthenticated:
                   UserProvider.of(context).user = null;
-                  widget.navigator.currentState.pushReplacement(
-                    LoginPage().route(),
-                    // (route) => false,
-                  );
+                  mainGi.get<MainRouter>().replace(LoginRoute());
                   break;
                 default:
                   break;

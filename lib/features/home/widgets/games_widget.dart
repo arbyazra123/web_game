@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rpg/injector.dart';
+import 'package:rpg/routes/rpg_router.dart';
 import 'package:rpg/rpg.dart';
 // import 'package:flutter_screenutil/screen_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:components/components.dart';
 import 'package:shared/shared.dart';
 import 'package:core/core.dart';
+
+import '../../../injector.dart';
+import '../../../routes/main_router.dart';
 
 class GamesWidget extends StatefulWidget {
   @override
@@ -65,7 +69,7 @@ class _GamesWidgetState extends State<GamesWidget> {
     // print(game.data());
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, game.data()['route'], arguments: game.id);
+        mainGi.get<MainRouter>().pushNamed(game.data()['route']);
       },
       child: Container(
         decoration: BoxDecoration(

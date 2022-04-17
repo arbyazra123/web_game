@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:rpg/main_rpg.dart';
 import 'package:rpg/routes/rpg_routes.dart';
 
@@ -9,7 +10,7 @@ part 'rpg_router.gr.dart';
   routes: <AutoRoute>[
     AutoRoute(
       path: RpgRoutes.main,
-      page: RPGMain,
+      page: RPGMainPage,
     ),
   ],
 )
